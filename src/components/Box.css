@@ -21,7 +21,7 @@
    border: 1px solid #81078c;
    cursor: pointer;
    outline: none;
-   text-decoration: line-through red;
+   text-decoration: line-through #850707;
    font-size: 60px;
    display: flex;
    justify-content: center;

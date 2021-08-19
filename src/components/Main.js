@@ -7,9 +7,8 @@ const Main = ({firstPlayer, secondPlayer}) => {
    let [boxes, setBoxes] = useState(Array(9).fill(null))
    let [next, setNext] = useState(firstPlayer)
    let [winner, lineIndexes] = determineWinner(boxes)
-   let [player1Score, setPlayer1Score] = useState(0)
-   let [player2Score, setPlayer2Score] = useState(0)
-
+   let [score1, setPlayer1Score] = useState(0)
+   let [score2, setPlayer2Score] = useState(0)
 
    useEffect(() => {
     if(winner === 'X') {
@@ -18,6 +17,14 @@ const Main = ({firstPlayer, secondPlayer}) => {
     if(winner === 'O')
       setPlayer2Score(player2Score => player2Score+1)
   }, [winner])
+   const newGame = () => {
+    setBoxes(Array(9).fill(null))
+    setNext(firstPlayer)
+   }
+   if(!boxes.some(el => el == null)) {
+     alert('There are no losers!')
+     newGame()
+   }
 
    const handleClick = (index) => {
       const boardCopy = [...boxes]
@@ -29,10 +36,7 @@ const Main = ({firstPlayer, secondPlayer}) => {
 
    const winnerPlayer = () => (next === firstPlayer) ? secondPlayer : firstPlayer
 
-   const newGame = () => {
-     setBoxes(Array(9).fill(null))
-     setNext(firstPlayer)
-   }
+
 
    return (
          <section className='wrapper'>
@@ -41,8 +45,8 @@ const Main = ({firstPlayer, secondPlayer}) => {
            <Board boxes={boxes} handleClick={handleClick} lineIndexes={lineIndexes}/>
            <section className='score'>
               <h2>Score:</h2>
-              <p>{`${firstPlayer} (X) : ${player1Score}`}</p>
-              <p>{`${secondPlayer} (O) : ${player2Score}`}</p>
+              <p>{`${firstPlayer} (X) : ${score1}`}</p>
+              <p>{`${secondPlayer} (O) : ${score2}`}</p>
             </section>
          </section>
    )
