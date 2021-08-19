@@ -1,0 +1,29 @@
+.box {
+   width: 100px;
+   height: 100px;
+   background: #795e88;
+   border: 1px solid #81078c;
+   cursor: pointer;
+   outline: none;
+   font-size: 60px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.box:hover {
+   background: #b72d2d;
+   transition: .3s all ease;
+}
+.checked {
+   width: 100px;
+   height: 100px;
+   background: #795e88;
+   border: 1px solid #81078c;
+   cursor: pointer;
+   outline: none;
+   text-decoration: line-through red;
+   font-size: 60px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}

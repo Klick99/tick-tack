@@ -1,0 +1,32 @@
+.wrapper {
+    min-height: 100vh;
+    width: 100%;
+    background: #787380;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.start-game {
+    width: 200px;
+    height: 35px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    background: #787380;
+    border: 1px solid white;
+}
+.start-game:hover {
+    background: #fff;
+    color: #222222;
+    transition: .3s all ease;
+}
+.player {
+    margin-top: 25px;
+    font-size: 36px;
+    color: white;
+}
+.score {
+    color: white;
+}
